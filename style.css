@@ -1,0 +1,15 @@
+.row {
+    display: flex;
+    border: 8px blue solid;
+}
+
+.column{
+    flex-basis: 100%;
+    border: 8px blue solid;
+    padding: 10px;
+}
+
+.container {
+    max-width: 200px;
+    margin: 0 auto;
+  }
