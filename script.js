@@ -17,5 +17,17 @@ function grid(length){
     }
 }
 
-// start etch-a-sketch with a 16 x 16 grid
+// changes colors of grid boxes that the mouse hovers over to black
+function hover(){
+    let gridSq = document.querySelectorAll('div.gridBox');
+    gridSq.forEach(square => square.addEventListener('mouseenter', () => {
+            square.style.background = 'black';
+        
+    }));
+}
+
+
+
+// start etch-a-sketch with a 16 x 16 grid and black pen
 grid(16);
+hover();
