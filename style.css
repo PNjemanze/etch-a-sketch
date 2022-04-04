@@ -1,15 +1,14 @@
-.row {
-    display: flex;
-    border: 8px blue solid;
+.gridBox {
+    border: 1px solid grey;
 }
 
-.column{
-    flex-basis: 100%;
-    border: 8px blue solid;
-    padding: 10px;
-}
-
-.container {
-    max-width: 200px;
+#grid {
+    border: 1px solid grey;
+    width: 75vh;
+    height: 75vh;
     margin: 0 auto;
-  }
+    margin-top: 2vh;
+    display: flex;
+    background: white;
+    display: grid;    
+}
