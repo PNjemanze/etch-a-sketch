@@ -16,12 +16,30 @@ function grid(length){
     }
 }
 
-// changes colors of grid boxes that the mouse hovers over to black
+// changes colors of grid boxes that the mouse hovers over to color selected
 function hover(){
     let gridSq = document.querySelectorAll('div.gridBox');
     gridSq.forEach(square => square.addEventListener('mouseenter', () => {
-            square.style.background = 'black';
+            square.style.background = color;
         
+    }));
+}
+
+// takes input from color selector and changes paint color
+function changeCol(event){
+       color = event.target.value;
+       hover();
+}
+
+// changes color of painter randomly as mouse hovers over boxes
+function rgbColChange(){
+    let gridSq = document.querySelectorAll('div.gridBox');
+    gridSq.forEach(square => square.addEventListener('mouseenter', () => {
+        let r = Math.floor((Math.random() * 255) + 1);
+        let g = Math.floor((Math.random() * 255) + 1);
+        let b = Math.floor((Math.random() * 255) + 1);
+        
+        square.style.background = `rgb(${r}, ${g}, ${b})`;
     }));
 }
 
@@ -35,21 +53,29 @@ function reset(){
     }
     grid(dimension);
 
-    // resets grid to original color
+    // resets grid and painter to original color
     let gridSq = document.querySelectorAll('div.gridBox');
     gridSq.forEach(square => {
             square.style.background = 'white';   
     });
+    color = '#000000';
 
 }
 
+
+// calls the needed variables from the HTML file
 let container = document.getElementById("grid");
+let oneCol = document.getElementById("colChoice");
+let rgbCol = document.getElementById("rgbBtn");
 let clear = document.getElementById("clearBtn");
 
-// start etch-a-sketch with a 16 x 16 grid and black pen
+// start etch-a-sketch with a 16 x 16 grid and black painter
 grid(16);
+let color = '#000000'
 hover();
 
 // checks to see if user has clicked buttons
 clear.addEventListener('click', reset);
 clear.addEventListener('click', hover);
+oneCol.addEventListener('input',changeCol,false);
+rgbCol.addEventListener('click', rgbColChange);
