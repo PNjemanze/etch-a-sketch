@@ -4,7 +4,7 @@
 
 This etch-a-sketch/sketch pad gives you the opportunity to create a virtual painting by hovering their mouse over the grid. Here is a work of art I put together! :)
 
-![My Art](/myart.png = 20x20)
+<img src="/myart.png" width="200">
 
  You are able to change the dimension of the grid by clicking the RESET button, this will change the thickness of your paint. You also have the opportunity to change the paint color with two options:
 * Selecting a single color
